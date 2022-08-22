@@ -11,11 +11,12 @@ export class AppComponent {
 
   public coleccion:Array<string>= new Array<string>();
 
-  constructor(private firestoreApp:StorageService ) {
+  constructor(public firestoreApp:StorageService ) {
    firestoreApp.traerColeccion().subscribe(t=>
     {
-       (<Array<TestA>>t).forEach(element => 
-        this.coleccion.push(element.a) 
+      this.coleccion = [];
+       (<Array<any>>t).forEach(element => 
+        this.coleccion.push(JSON.stringify( element)) 
        )
       
     });
@@ -23,7 +24,7 @@ export class AppComponent {
 
   }
   Agregar(){
-    this.firestoreApp.setItem()
+    this.firestoreApp.setItem();
 
   }
 
