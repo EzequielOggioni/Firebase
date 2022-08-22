@@ -3,9 +3,6 @@ export class Mensaje {
     usuario:string;
     texto:string;
 
-    public /**
-     *
-     */
     constructor() {
         this.fecha = new Date();
         this.texto ="";
