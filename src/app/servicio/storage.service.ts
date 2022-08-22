@@ -11,7 +11,7 @@ import { Mensaje } from '../Entidades/mensaje';
 export class StorageService {
   setItem( miMensajeNuevo: Mensaje) {
     var mensajes  = this.firestore.collection('Mensaje');
-    mensajes.add(miMensajeNuevo);
+    mensajes.add(JSON.parse(JSON.stringify(miMensajeNuevo)));
   }
 
   constructor(public firestore : AngularFirestore) { 
