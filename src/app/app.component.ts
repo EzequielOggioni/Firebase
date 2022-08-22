@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from './servicio/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Firestore';
+
+  public coleccion:Array<string>= new Array<string>();
+
+  constructor(private firestoreApp:StorageService ) {
+   firestoreApp.traerColeccion().subscribe(t=>
+    {
+       (<Array<TestA>>t).forEach(element => 
+        this.coleccion.push(element.a) 
+       )
+      
+    });
+    
+
+  }
+  Agregar(){
+    this.firestoreApp.setItem()
+
+  }
+
+}
+
+
+class TestA
+{
+  public a:string='';
+  
 }

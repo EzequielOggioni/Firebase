@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "beltran-1ae8a": {
+      "hosting": {
+        "Firestore": [
+          "beltran-1ae8a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "beltran-1ae8a"
+  }
+}
