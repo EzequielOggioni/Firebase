@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { UsuarioDirective } from './directiva/usuario.directive';
+import { UsuarioPipe } from './pipe/usuario.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsuarioDirective,
+    UsuarioPipe
   ],
   imports: [
     BrowserModule,
